@@ -1,10 +1,88 @@
 import React from 'react'
-import { FilterCheckbox, RangeSlider, Title } from '@/components/shared'
+import { CheckboxFiltersGroup, FilterCheckbox, RangeSlider, Title } from '@/components/shared'
 import { Input } from '@/components/ui'
 
 interface IFiltersProps {
 	className?: string
 }
+
+const defaultItems = [
+	{
+		text: 'Сырный соус',
+		value: '1'
+	},
+	{
+		text: 'Моццарелла',
+		value: '2'
+	},
+	{
+		text: 'Чеснок',
+		value: '3'
+	},
+	{
+		text: 'Солённые огурчики',
+		value: '4'
+	},
+	{
+		text: 'Красный лук',
+		value: '5'
+	},
+	{
+		text: 'Томаты',
+		value: '6'
+	}
+]
+
+const allItems = [
+	{
+		text: 'Сырный соус',
+		value: '1'
+	},
+	{
+		text: 'Моццарелла',
+		value: '2'
+	},
+	{
+		text: 'Чеснок',
+		value: '3'
+	},
+	{
+		text: 'Солённые огурчики',
+		value: '4'
+	},
+	{
+		text: 'Красный лук',
+		value: '5'
+	},
+	{
+		text: 'Томаты',
+		value: '6'
+	},
+	{
+		text: 'Сырный соус',
+		value: '1'
+	},
+	{
+		text: 'Моццарелла',
+		value: '2'
+	},
+	{
+		text: 'Чеснок',
+		value: '3'
+	},
+	{
+		text: 'Солённые огурчики',
+		value: '4'
+	},
+	{
+		text: 'Красный лук',
+		value: '5'
+	},
+	{
+		text: 'Томаты',
+		value: '6'
+	}
+]
 
 export const Filters: React.FC<IFiltersProps> = ({ className }) => {
 	return (
@@ -24,6 +102,14 @@ export const Filters: React.FC<IFiltersProps> = ({ className }) => {
 				</div>
 				<RangeSlider min={0} max={5000} step={10} value={[0, 5000]} />
 			</div>
+
+			<CheckboxFiltersGroup
+				className='mt-5'
+				title='Ингредиенты: '
+				limit={6}
+				defaultValue={defaultItems}
+				items={allItems}
+			/>
 		</div>
 	)
 }
