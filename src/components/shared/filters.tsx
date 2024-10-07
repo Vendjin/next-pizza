@@ -107,8 +107,8 @@ export const Filters: React.FC<IFiltersProps> = ({ className }) => {
 				className='mt-5'
 				title='Ингредиенты: '
 				limit={6}
-				defaultValue={defaultItems}
 				items={allItems}
+				defaultItems={defaultItems}
 			/>
 		</div>
 	)
