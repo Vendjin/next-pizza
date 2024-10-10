@@ -20,7 +20,13 @@ export const ProductCard: React.FC<IProductCardProps> = ({ className, imageUrl, 
 		<div className={cn('product-card-block', className)} id={id.toString()}>
 			<Link href='/product/1'>
 				<div className='flex justify-center p-6 bg-secondary rounded-lg h-[260px]'>
-					<Image src={imageUrl} alt={name} width={215} height={215} />
+					<Image
+						src={imageUrl}
+						alt={name}
+						width={215}
+						height={215}
+						style={{ width: 'auto', height: 'auto' }}
+					/>
 				</div>
 
 				<Title text={name} size='sm' className='mb-1 mt-3 font-bold' />

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { cn } from '@/lib/utils'
 import { useCategoryStore } from '@/store/category'
 
@@ -21,7 +21,6 @@ const categories: { id: number; name: string }[] = [
 export const Categories: React.FC<ICategoriesProps> = ({ className }) => {
 	const activeCategoryId = useCategoryStore(state => state.activeId)
 	const setActiveCategoryId = useCategoryStore(state => state.setActiveId)
-	// const [activeCategory, setActiveCategory] = useState(0)
 
 	const handleChangeCategory = (index: number) => {
 		setActiveCategoryId(index)

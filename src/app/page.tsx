@@ -1,5 +1,5 @@
 import { Container, Filters, Header, ProductsGroupList, Title, TopBar } from '@/components/shared'
-import { produtsMock } from '@/mock-data'
+import { produtsMock } from '@/mocks/mock-data'
 
 export default function Home() {
 	return (
