@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["prismaSchemaFolder"] // для того что бы бить схемы по файлам типо user.prisma
 }
 
 datasource db {
@@ -8,33 +9,13 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-model User {
-  id Int @id @default(autoincrement())
-
-  fullName String
-  email    String @unique
-  password String
-
-  role UserRole @default(USER)
-
-  provider   String //какая соц-сеть привязання к пользователю
-  providerId String
-
-  cart             Cart?
-  orders           Order[]
-  verificationCode VerificationCode?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model Product {
   id Int @id @default(autoincrement())
 
   name     String
   imageUrl String
 
-  ingredient       Ingredient[]
+  ingredients      Ingredient[]
   productVariation ProductVariation[]
 
   category   Category? @relation(fields: [categoryId], references: [id])
@@ -164,3 +145,7 @@ enum UserRole {
   USER
   ADMIN
 }
+
+// npx prisma migrate dev --name name_your_migration - миграция
+// authorId String @map("author_id") - как в базе будет называтсья поле author_id
+// @@map("posts") в конце модели - как model Post будет называться в BD  posts

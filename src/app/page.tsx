@@ -1,5 +1,5 @@
 import { Container, Filters, Header, ProductsGroupList, Title, TopBar } from '@/components/shared'
-import { produtsMock } from '@/mocks/mock-data'
+import { productsMock } from '../../mocks/products-mock'
 
 export default function Home() {
 	return (
@@ -18,9 +18,9 @@ export default function Home() {
 					</div>
 					<div className='productsListWrap flex-1'>
 						<div className='flex flex-col gap-16'>
-							<ProductsGroupList title='Пиццы' products={produtsMock} categoryId={1} />
-							<ProductsGroupList title='Комбо' products={produtsMock} categoryId={2} />
-							<ProductsGroupList title='Закуски' products={produtsMock} categoryId={3} />
+							<ProductsGroupList title='Пиццы' products={productsMock} categoryId={1} />
+							<ProductsGroupList title='Комбо' products={productsMock} categoryId={2} />
+							<ProductsGroupList title='Закуски' products={productsMock} categoryId={3} />
 						</div>
 					</div>
 				</div>
