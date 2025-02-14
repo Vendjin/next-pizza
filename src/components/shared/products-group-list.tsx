@@ -24,7 +24,8 @@ export const ProductsGroupList: React.FC<IProductsGroupListProps> = ({
 	const setActiveCategoryId = useCategoryStore(state => state.setActiveId)
 	const intersectionRef = useRef(null)
 	const intersection = useIntersection(intersectionRef, {
-		threshold: 0.4
+		threshold: 1
+		// threshold: 0.4
 	})
 
 	useEffect(() => {
@@ -42,7 +43,7 @@ export const ProductsGroupList: React.FC<IProductsGroupListProps> = ({
 						key={product.id}
 						id={product.id}
 						name={product.name}
-						price={product.items[0].price}
+						price={product.productVariation[0].price}
 						imageUrl={product.imageUrl}
 					/>
 				))}

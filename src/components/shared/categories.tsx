@@ -3,28 +3,30 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { useCategoryStore } from '@/store/category'
+import { Category } from '@prisma/client'
 
 interface ICategoriesProps {
+	categories: Category[]
 	className?: string
 }
 
-const categories: { id: number; name: string }[] = [
-	{ id: 1, name: 'Пиццы' },
-	{ id: 2, name: 'Комбо' },
-	{ id: 3, name: 'Закуски' },
-	{ id: 4, name: 'Коктейли' },
-	{ id: 5, name: 'Кофе' },
-	{ id: 6, name: 'Напитки' },
-	{ id: 7, name: 'Десерты' }
-]
+// const categories: { id: number; name: string }[] = [
+// 	{ id: 1, name: 'Пиццы' },
+// 	{ id: 2, name: 'Комбо' },
+// 	{ id: 3, name: 'Закуски' },
+// 	{ id: 4, name: 'Коктейли' },
+// 	{ id: 5, name: 'Кофе' },
+// 	{ id: 6, name: 'Напитки' },
+// 	{ id: 7, name: 'Десерты' }
+// ]
 
-export const Categories: React.FC<ICategoriesProps> = ({ className }) => {
+export const Categories: React.FC<ICategoriesProps> = ({ categories, className }) => {
 	const activeCategoryId = useCategoryStore(state => state.activeId)
-	const setActiveCategoryId = useCategoryStore(state => state.setActiveId)
+	// const setActiveCategoryId = useCategoryStore(state => state.setActiveId)
 
-	const handleChangeCategory = (index: number) => {
-		setActiveCategoryId(index)
-	}
+	// const handleChangeCategory = (index: number) => {
+	// 	setActiveCategoryId(index)
+	// }
 
 	return (
 		<div className={cn('inline-flex gap-1 bg-gray-50 p-1 rounded-2xl', className)}>
@@ -37,7 +39,7 @@ export const Categories: React.FC<ICategoriesProps> = ({ className }) => {
 					href={`#${name}`}
 					key={index}
 				>
-					<button onClick={() => handleChangeCategory(index)}>{name}</button>
+					<button>{name}</button>
 				</a>
 			))}
 		</div>

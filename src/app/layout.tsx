@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Nunito } from 'next/font/google'
-import React from 'react'
+import React, { Suspense } from 'react'
+import { Header } from '@/components/shared'
 
 export const metadata: Metadata = {
 	title: 'Next Pizza | Главная',
@@ -22,6 +23,9 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={`${nunito.className}`}>
+				<Suspense>
+					<Header />
+				</Suspense>
 				<main className='min-h-screen'>{children}</main>
 			</body>
 		</html>

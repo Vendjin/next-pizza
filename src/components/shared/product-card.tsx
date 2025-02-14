@@ -18,7 +18,7 @@ interface IProductCardProps {
 export const ProductCard: React.FC<IProductCardProps> = ({ className, imageUrl, name, price, id }) => {
 	return (
 		<div className={cn('product-card-block', className)} id={id.toString()}>
-			<Link href='/product/1'>
+			<Link href={`/product/${id}`}>
 				<div className='flex justify-center p-6 bg-secondary rounded-lg h-[260px]'>
 					<Image
 						src={imageUrl}
