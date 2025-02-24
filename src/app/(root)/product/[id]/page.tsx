@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, ProductImage, Title } from '@/components/shared'
-import { prisma } from '../../../../prisma/prisma-client'
+import { Container, ProductImage, Title, ToggleVariants } from '@/components/shared'
+import { prisma } from '../../../../../prisma/prisma-client'
 import { notFound } from 'next/navigation'
 
 interface IProductPage {
@@ -20,8 +20,28 @@ const ProductPage: React.FC<IProductPage> = async ({ params: { id } }) => {
 			<div className='flex flex-1'>
 				<ProductImage imageUrl={product.imageUrl} alt={product.name} size={40} className='' />
 
-				<div className='w-[490px] bg-[#FCFCFC] p-7'>
+				<div className='w-[490px] bg-[#F6F5F4] p-7'>
 					<Title text={product.name} size='md' className='font-extrabold mb-1' />
+
+					<p className='text-gray-400'>lorem ipsum lorem ipsum</p>
+
+					<ToggleVariants
+						selectedValue='2'
+						items={[
+							{
+								name: 'Маленькая',
+								value: '1'
+							},
+							{
+								name: 'Средняя',
+								value: '2'
+							},
+							{
+								name: 'Большая',
+								value: '3'
+							}
+						]}
+					/>
 				</div>
 			</div>
 		</Container>

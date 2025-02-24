@@ -64,7 +64,7 @@ export const SearchInput: React.FC<ISearchInputProps> = ({ className }) => {
 					>
 						{products.map(product => (
 							<Link
-								href={`/product/${product.id}`}
+								href={`/src/app/(root)/product/${product.id}`}
 								key={product.id}
 								onClick={onClickItem}
 								className='px-3 py-2 hover:bg-primary/10 flex items-center gap-3'

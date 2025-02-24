@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '../globals.css'
 import { Nunito } from 'next/font/google'
 import React, { Suspense } from 'react'
 import { Header } from '@/components/shared'
@@ -24,9 +24,11 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={`${nunito.className}`}>
 				<Suspense>
-					<Header />
+					<main className='min-h-screen'>
+						<Header />
+						{children}
+					</main>
 				</Suspense>
-				<main className='min-h-screen'>{children}</main>
 			</body>
 		</html>
 	)
