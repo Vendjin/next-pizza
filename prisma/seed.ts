@@ -1,8 +1,8 @@
 import { prisma } from './prisma-client'
-import { categories } from '../mocks/categories-mock'
-import { users } from '../mocks/users-mock'
-import { ingredients } from '../mocks/ingredients-mock'
-import { products } from '../mocks/products-mock'
+import { categories } from '@/shared/mocks/categories-mock'
+import { users } from '@/shared/mocks/users-mock'
+import { ingredients } from '@/shared/mocks/ingredients-mock'
+import { products } from '@/shared/mocks/products-mock'
 import { Prisma } from '@prisma/client'
 
 interface ProductItemInput {
