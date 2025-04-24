@@ -12,7 +12,14 @@ interface IIngredientItemProps {
 	onClick?: VoidFunction
 }
 
-export const IngredientItem: React.FC<IIngredientItemProps> = ({ className, active, onClick, imageUrl, name, price }) => {
+export const IngredientItem: React.FC<IIngredientItemProps> = ({
+	className,
+	active,
+	onClick,
+	imageUrl,
+	name,
+	price
+}) => {
 	return (
 		<div
 			className={cn(

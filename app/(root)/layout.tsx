@@ -15,8 +15,8 @@ export default function HomeLayout({
 	modal: React.ReactNode
 }>) {
 	return (
-		<Suspense>
-			<main className='min-h-screen'>
+		<Suspense fallback={<div>Загрузка...</div>}>
+			<main>
 				<Header />
 				{children}
 				{modal}
