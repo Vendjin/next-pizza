@@ -21,7 +21,6 @@ interface IChoosePizzaFormProps {
 	onClickAddCart?: VoidFunction
 }
 
-// TODO остановка на 10-10-18
 export const ChoosePizzaForm: React.FC<IChoosePizzaFormProps> = ({
 	className,
 	name,
